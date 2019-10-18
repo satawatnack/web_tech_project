@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f4f4 !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  overflow: hidden;
+  background-color: rgb(34, 2, 0, 0);
+  top: 0px;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  transition: top 0.5s;
+  transition: 0.7s;
+}
+
+nav a {
+  float: right;
+  color: #ffffff;
+  text-align: center;
+  padding: 28px 40px;
+  text-decoration: none;
+  font-size: 18px;
+  opacity: 1;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background-color: #ffffff;
+  color: rgb(34, 2, 0, 1);
+  opacity: 1;
+}
+
+nav a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.label {
+  float: left;
+  color: #ffffff;
+  text-align: center;
+  padding: 23px 0px 0px 40px;
+  font-size: 25px;
+}
+
+.cover-video {
+  height: 850px;
+}
+
+.cover-video video {
+  min-width: 100%;
+  z-index: -999;
+}
+
+.cover-img {
+  height: 800px;
+  filter: grayscale(40%);
+  background: url(img/noth.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.firstpage-header {
+  text-align: center;
+  margin: 40px;
+}
+
+.center-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 100px;
+}
+
+.center-text-below {
+  position: absolute;
+  top: 600px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 25px;
+  padding-top: 20px;
+}
+
+.center-text-below2 {
+  position: absolute;
+  top: 700px;
+  left: 48.3%;
+  transform: translate(-50%, -50%);
+}
+
+.scoll-icon {
+  animation: GoUpDown 1.5s infinite linear;
+  position: absolute;
+  margin: auto;
+}
+
+@keyframes GoUpDown {
+
+  0%,
+  100% {
+    bottom: 0;
+  }
+
+  50% {
+    bottom: 20px;
+  }
+}
+
+.center-page {
+  max-width: 70%;
+  margin: auto;
+  background: white;
+  margin-bottom: 40px;
+  font-size: 20px;
+  padding: 50px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.footer {
+  height: 200px;
+  bottom: 0;
+  width: 100%;
+  background: rgb(34, 2, 0, 1);
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+
+.footer1 {
+  margin: 30px 30px 0px;
+}
+
+.footer1 a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer1 a:hover {
+  text-decoration: underline;
+}
+
+.footer1 p {
+  padding-top: 5px;
+  /* color: #8f9296; */
+  color: #e2dfdfe0;
+}
+
+.footer2 {
+  margin: 30px 30px 0px;
+}
+
+.footer2 img {
+  width: 40px;
+  vertical-align: middle;
+}
+
+.footer3 {
+  margin: 30px 30px 0px;
+}
+
+.footer3 p {
+  margin-top: 10px;
+  color: #e2dfdfe0 !important;
+}
+
+.middle-page-box {
+  margin: auto;
+  max-width: 80%;
+  margin-bottom: 20px;
+  padding-top: 25px;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.region-content {
+  position: relative;
+  margin: 4px;
+}
+
+.region-content img {
+  object-fit: cover;
+  width: 100%;
+  height: 330px;
+}
+
+.region-content .overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.details {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  transform: translate(-50%, -50%);
+}
+
+.details h3 {
+  color: #ffffff;
+  letter-spacing: 0.2em;
+  font-size: 24px;
+}
+
+.region-content:hover .details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.region-content:hover .overlay {
+  opacity: 1;
+}
+
+.fadeIn-top {
+  top: 20%;
+}
+
+/* sub-page */
+
+.sub-page {
+  margin-bottom: 200px;
+  padding-top: 50px;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  background: #f4f4f4;
+}
+
+.sub-page-content {
+  margin-bottom: 80px;
+}
+
+.sub-page-img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.icon-subpage {
+  width: 30px;
+}
+
+.content-box {
+  background: #ffffff;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.content-box:hover {
+  transform: scale(1.05, 1.05) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.content-box .img-box {
+  padding: 0px;
+}
+
+.content-box .link-box {
+  color: black;
+  text-decoration: none;
+}
