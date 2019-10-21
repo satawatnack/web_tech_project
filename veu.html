@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app">
+            <div class="search-wrapper">
+                <label>Search title:</label>
+                <input type="text" v-model="search" placeholder="Search title.." />
+            </div>
+            <div v-for="card, i in filterCard">
+                <div v-if="i%2 == 0" class="row sub-page-content">
+                    <div data-aos="fade-right" class="col-sm-8 content-box">
+                        <a v-bind:href="card.link" class="link-box">
+                            <div class="row">
+                                <div class="col-sm-5 img-box">
+                                    <img class="sub-page-img" v-bind:src="card.img" alt="">
+                                </div>
+                                <div class="col-sm-7">
+                                    <dl>
+                                        <dt class="mb-3">{{ card.title }}</dt>
+                                        <dd><img class="icon-subpage" src="img/icons8-place-marker-50.png" alt="">
+                                            {{ card.location }}
+                                        </dd>
+                                        <hr>
+                                        <dd>
+                                            {{ card.text }}
+                                        </dd>
+                                        <pre></pre>
+                                    </dl>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+
+                <div v-else class="row sub-page-content">
+                    <div class="col-sm-4"></div>
+                    <div data-aos="fade-left" class="col-sm-8 content-box">
+                        <a v-bind:href="card.link" class="link-box">
+                            <div class="row">
+                                <div class="col-sm-5 img-box">
+                                    <img class="sub-page-img" v-bind:src="card.img" alt="">
+                                </div>
+                                <div class="col-sm-7">
+                                    <dl>
+                                        <dt class="mb-3">{{ card.title }}</dt>
+                                        <dd><img class="icon-subpage" src="img/icons8-place-marker-50.png" alt="">
+                                            {{ card.location }}
+                                        </dd>
+                                        <hr>
+                                        <dd>
+                                            {{ card.text }}
+                                        </dd>
+                                        <pre></pre>
+                                    </dl>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="vue.js"></script>
+
+</body>
+
+</html>

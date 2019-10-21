@@ -12,4 +12,3 @@ window.onscroll = function () {
     }
     prevScrollpos = currentScrollPos;
 }
-AOS.init();

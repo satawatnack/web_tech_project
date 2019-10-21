@@ -8,8 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <link href="https://fonts.googleapis.com/css?family=Athiti|Krub|Prompt&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,119 +26,79 @@
         <div class="center-text">ภาคเหนือ</div>
     </div>
 
-    <div class="center-page sub-page">
-        <h3>โบราณสถาน</h3>
+    <div class="container sub-page">
         <br>
-        <div class="row sub-page-content">
-            <div data-aos="fade-right" class="col-sm-8 content-box">
-                <a href="#" class="link-box">
-                    <div class="row">
-                        <div class="col-sm-5 img-box">
-                            <img class="sub-page-img" src="img/south.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <dl>
-                                <dt class="mb-3">อุทยานประวัติศาสตร์กำแพงเพชร</dt>
-                                <dd><img class="icon-subpage" src="img/icons8-place-marker-50.png" alt=""> อำเภอเมือง
-                                    จังหวัดกำแพงเพชร
-                                </dd>
-                                <hr>
-                                <dd>
-                                    brand new hotel in pattaya! i've always thought the what ever photos they post in
-                                    agoda doesnt really look like what the
-                                    actual hotel is. but i was wrong, beside the hotel is
-                                </dd>
-                                <pre></pre>
-                            </dl>
-                        </div>
+        <div id="app">
+            <div class="row">
+                <div class="col sm-8">
+                    <h3>โบราณสถาน</h3>
+                </div>
+                <div class="col sm-4">
+                    <div class="search-bar">
+                        <img src="/img/icons8-search-256.png" alt="">
+                        <input class="search-input" type="text" v-model="search"
+                            placeholder="ค้นหาโบราณสถาน , จังหวัด" />
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-sm-4"></div>
-        </div>
+            <br>
+            <transition-group name="fade">
+                <div v-for="card, i in filterCard" v-bind:key="card.title">
+                    <div v-if="i%2 == 0" class="row sub-page-content">
+                        <div class="col-sm-8 content-box">
+                            <a v-bind:href="card.link" class="link-box">
+                                <div class="row">
+                                    <div class="col-sm-5 img-box">
+                                        <img class="sub-page-img" v-bind:src="card.img" alt="">
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <dl>
+                                            <dt class="mb-3 card_title">{{ card.title }}</dt>
+                                            <dd><img class="icon-subpage" src="img/icons8-place-marker-50.png" alt="">
+                                                {{ card.location }}
+                                            </dd>
+                                            <hr>
+                                            <dd>
+                                                {{ card.text }}
+                                            </dd>
+                                            <pre></pre>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
 
-        <div class="row sub-page-content">
-            <div class="col-sm-4"></div>
-            <div data-aos="fade-left" class="col-sm-8 content-box">
-                <a href="" class="link-box">
-                    <div class="row">
-                        <div class="col-sm-5 img-box">
-                            <img class="sub-page-img" src="img/middle.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <dl>
-                                <dt class="mb-3">อุทยานประวัติศาสตร์กำแพงเพชร</dt>
-                                <dd><img class="icon-subpage" src="img/icons8-place-marker-50.png" alt=""> อำเภอเมือง
-                                    จังหวัดกำแพงเพชร
-                                </dd>
-                                <hr>
-                                <dd>
-                                    brand new hotel in pattaya! i've always thought the what ever photos they post in
-                                    agoda doesnt really look like what the
-                                    actual hotel is. but i was wrong, beside the hotel is
-                                </dd>
-                                <pre></pre>
-                            </dl>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
- 
-        <div class="row sub-page-content">
-            <div data-aos="fade-right" class="col-sm-8 content-box">
-                <a href="#" class="link-box">
-                    <div class="row">
-                        <div class="col-sm-5 img-box">
-                            <img class="sub-page-img" src="img/45degre_noth.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <dl>
-                                <dt class="mb-3">อุทยานประวัติศาสตร์กำแพงเพชร</dt>
-                                <dd><img class="icon-subpage" src="img/icons8-place-marker-50.png" alt=""> อำเภอเมือง
-                                    จังหวัดกำแพงเพชร
-                                </dd>
-                                <hr>
-                                <dd>
-                                    brand new hotel in pattaya! i've always thought the what ever photos they post in
-                                    agoda doesnt really look like what the
-                                    actual hotel is. but i was wrong, beside the hotel is
-                                </dd>
-                                <pre></pre>
-                            </dl>
+                    <div v-else class="row sub-page-content">
+                        <div class="col-sm-4"></div>
+                        <div data-aos="fade-left" class="col-sm-8 content-box">
+                            <a v-bind:href="card.link" class="link-box">
+                                <div class="row">
+                                    <div class="col-sm-5 img-box">
+                                        <img class="sub-page-img" v-bind:src="card.img" alt="">
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <dl>
+                                            <dt class="mb-3 card_title">{{ card.title }}</dt>
+                                            <dd><img class="icon-subpage" src="img/icons8-place-marker-50.png" alt="">
+                                                {{ card.location }}
+                                            </dd>
+                                            <hr>
+                                            <dd>
+                                                {{ card.text }}
+                                            </dd>
+                                            <pre></pre>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-sm-4"></div>
-        </div>
+                </div>
+                </transition>
 
-        <div class="row sub-page-content">
-            <div class="col-sm-4"></div>
-            <div data-aos="fade-left" class="col-sm-8 content-box">
-                <a href="" class="link-box">
-                    <div class="row">
-                        <div class="col-sm-5 img-box">
-                            <img class="sub-page-img" src="img/noth.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <dl>
-                                <dt class="mb-3">อุทยานประวัติศาสตร์กำแพงเพชร</dt>
-                                <dd><img class="icon-subpage" src="img/icons8-place-marker-50.png" alt=""> อำเภอเมือง
-                                    จังหวัดกำแพงเพชร
-                                </dd>
-                                <hr>
-                                <dd>
-                                    brand new hotel in pattaya! i've always thought the what ever photos they post in
-                                    agoda doesnt really look like what the
-                                    actual hotel is. but i was wrong, beside the hotel is
-                                </dd>
-                                <pre></pre>
-                            </dl>
-                        </div>
-                    </div>
-                </a>
-            </div>
+
         </div>
     </div>
 
@@ -148,17 +108,17 @@
         <div class="footer1">
             <h3>WTLOVER</h3><br>
             <a href="#">Home</a> ·
-            <a href="#">About Us</a> ·
             <a href="#">Blog</a> ·
-            <a href="#">Contact</a>
+            <a href="#">About Us</a> ·
+            <a href="#">About</a>
             <p>
                 wtlover &copy; 2019 </p>
             </p>
         </div>
         <div class="footer2">
-            <p><img src="img/icons8-iphone-x-64.png" alt=""> 0909929418</p>
+            <p><img src="img/icons8-iphone-x-64.png" alt=""> 090xxxxxxx</p>
             <br>
-            <p><img src="img/icons8-important-mail-48.png" alt=""> s_nack@hotmail.com</p>
+            <p><img src="img/icons8-important-mail-100.png" alt=""> xxxxx@hotmail.com</p>
         </div>
         <div class="footer3">
             <h3>About</h3>
@@ -167,6 +127,7 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="vue.js"></script>
 </body>
 
 </html>
