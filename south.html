@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://unpkg.com/vue"></script>
+    <link href="https://fonts.googleapis.com/css?family=Athiti|Krub|Prompt&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <nav>
+            <div class="label">Web Tech</div>
+            <a href="#">About</a>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="index.html">Home</a>
+        </nav>
+        <div style="background: url(img/noth.jpg);background-attachment: fixed;background-position: center;background-repeat: no-repeat;"
+            class="cover-img"></div>
+        <div class="center-text">ภาคใต้</div>
+    </div>
+
+    <div class="container sub-page">
+        <br>
+        <div id="app">
+            <div class="row">
+                <div class="col sm-8">
+                    <h3>โบราณสถาน</h3>
+                </div>
+                <div class="col sm-4">
+                    <div class="search-bar">
+                        <img src="/img/icons8-search-256.png" alt="">
+                        <input class="search-input" type="text" v-model="search"
+                            placeholder="ค้นหาโบราณสถาน , จังหวัด" />
+                    </div>
+                </div>
+            </div>
+            <br>
+            <transition-group name="fade">
+                <div v-for="card, i in filterCard" v-bind:key="card.title">
+                    <div v-if="i%2 == 0" class="row sub-page-content">
+                        <div class="col-sm-8 content-box">
+                            <a v-bind:href="card.link" class="link-box">
+                                <div class="row">
+                                    <div class="col-sm-5 img-box">
+                                        <img class="sub-page-img" v-bind:src="card.img" alt="">
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <dl>
+                                            <dt class="mb-3 card_title">{{ card.title }}</dt>
+                                            <dd><img class="icon-subpage" src="img/icons8-place-marker-50.png" alt="">
+                                                {{ card.location }}
+                                            </dd>
+                                            <hr>
+                                            <dd>
+                                                {{ card.text }}
+                                            </dd>
+                                            <pre></pre>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+
+                    <div v-else class="row sub-page-content">
+                        <div class="col-sm-4"></div>
+                        <div data-aos="fade-left" class="col-sm-8 content-box">
+                            <a v-bind:href="card.link" class="link-box">
+                                <div class="row">
+                                    <div class="col-sm-5 img-box">
+                                        <img class="sub-page-img" v-bind:src="card.img" alt="">
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <dl>
+                                            <dt class="mb-3 card_title">{{ card.title }}</dt>
+                                            <dd><img class="icon-subpage" src="img/icons8-place-marker-50.png" alt="">
+                                                {{ card.location }}
+                                            </dd>
+                                            <hr>
+                                            <dd>
+                                                {{ card.text }}
+                                            </dd>
+                                            <pre></pre>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </transition>
+
+
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="footer1">
+            <h3>WTLOVER</h3><br>
+            <a href="#">Home</a> ·
+            <a href="#">Blog</a> ·
+            <a href="#">About Us</a> ·
+            <a href="#">About</a>
+            <p>
+                wtlover &copy; 2019 </p>
+            </p>
+        </div>
+        <div class="footer2">
+            <p><img src="img/icons8-iphone-x-64.png" alt=""> 090xxxxxxx</p>
+            <br>
+            <p><img src="img/icons8-important-mail-100.png" alt=""> xxxxx@hotmail.com</p>
+        </div>
+        <div class="footer3">
+            <h3>About</h3>
+            <p>my lover project that i never love bofore</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="vue.js"></script>
+</body>
+
+</html>

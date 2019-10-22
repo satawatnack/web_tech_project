@@ -14,14 +14,14 @@ const app = new Vue({
         search: '',
         cardlist: [
             new Card(
-                'noth-content/first.html',
+                'content/noth/first.html',
                 'อุทยานประวัติศาสตร์กำแพงเพชร',
                 'img/south.jpg',
                 'จังหวัดกำแพงเพชร',
                 'brand new hotel in pattaya! i\'ve always thought the what ever photos they post in agoda doesnt really look like what theactual hotel is.but i was wrong, beside the hotel is'
             ),
             new Card(
-                'noth-content/second.html',
+                'content/mid/first.html',
                 'อุทยานประวัติศาสตร์ศรีสัชนาลัย',
                 'img/south.jpg',
                 'จังหวัดกำแพงเพชร',
