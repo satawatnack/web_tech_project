@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Athiti|Krub|Prompt&display=swap" rel="stylesheet">
 </head>
 
@@ -16,10 +17,19 @@
     <div>
         <nav>
             <div class="label">Web Tech</div>
-            <a href="#">About</a>
-            <a href="#">About Us</a>
-            <a href="#">Blog</a>
-            <a href="index.html">Home</a>
+            <a class="nav-link" href="aboutus.html">เกี่ยวกับเรา</a>
+            <div class="dropdown">
+                <button class="dropbtn active">ภูมิภาค 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="south.html">ภาคใต้</a>
+                    <a href="mid.html">ภาคกลาง</a>
+                    <a class="active-dropdown" href="#">ภาคตะวันออกเฉียงเหนือ</a>
+                    <a href="noth.html">ภาคเหนือ</a>
+                </div>
+            </div> 
+            <a class="nav-link" href="index.html">หน้าแรก</a>
         </nav>
         <div style="background: url(img/noth.jpg);background-attachment: fixed;background-position: center;background-repeat: no-repeat;"
             class="cover-img"></div>

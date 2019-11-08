@@ -8,7 +8,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Athiti|Krub|Prompt&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -18,10 +21,19 @@
         </video>
         <nav>
             <div class="label">Web Tech</div>
-            <a class="fade-up" href="#">About</a>
-            <a class="fade-up" href="#">About Us</a>
-            <a class="fade-up" href="#">Blog</a>
-            <a class="fade-up" href="index.html">Home</a>
+            <a class="nav-link" href="aboutus.html">เกี่ยวกับเรา</a>
+            <div class="dropdown">
+                <button class="dropbtn">ภูมิภาค 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="south.html">ภาคใต้</a>
+                    <a href="mid.html">ภาคกลาง</a>
+                    <a href="east.html">ภาคตะวันออกเฉียงเหนือ</a>
+                    <a href="noth.html">ภาคเหนือ</a>
+                </div>
+            </div>
+            <a class="nav-link active" href="index.html">หน้าแรก</a>
         </nav>
         <div class="center-text">WT Lover</div>
         <div class="center-text-below">
@@ -33,8 +45,8 @@
             </a>
         </div>
     </div>
-
-    <div id="go-to-this" class="middle-page-box">
+    <div id="go-to-this"></div>
+    <div data-aos="fade-up" class="middle-page-box">
         <div class="row">
             <div class="col-sm-6 nopadding">
                 <div class="region-content">
@@ -84,7 +96,7 @@
     </div>
 
 
-    <div class="center-page">
+    <div data-aos="fade-up" class="center-page">
         <h3>Time to leave</h3>
         <p>The semi-autonomous Chinese city is in its 18th consecutive week of anti-government protests. The unrest has
             grown

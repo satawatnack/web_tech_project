@@ -14,8 +14,8 @@ html {
 }
 
 nav {
-  overflow: hidden;
-  background-color: rgb(34, 2, 0, 0);
+  overflow: visible;
+  background-color: rgb(45, 45, 47, 0);
   top: 0px;
   width: 100%;
   position: fixed;
@@ -24,26 +24,86 @@ nav {
   transition: 0.7s;
 }
 
-nav a {
+nav .nav-link {
   float: right;
   color: #ffffff;
+  text-align: center;
+  padding: 28px 40px;
+  text-decoration: none;
+  font-size: 19px;
+  opacity: 1;
+  transition: 0.2s;
+  height: 100%;
+  border-top: 10px solid transparent;
+  padding-top: 18px;
+}
+
+.nav-link:hover , .dropdown .dropbtn:hover{
+  border-top:10px solid rgb(211, 85, 85);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.active {
+  border-top:10px solid rgb(211, 85, 85, 0.8) !important;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: right;
+  overflow: visible;
+}
+
+.dropdown .dropbtn {
   text-align: center;
   padding: 28px 40px;
   text-decoration: none;
   font-size: 18px;
   opacity: 1;
   transition: 0.2s;
+  height: 100%;
+  border: transparent;
+  border-top: 10px solid transparent;
+  padding-top: 18px;
+  background-color: rgb(45, 45, 47, 0);
+  color: #ffffff;
 }
 
-nav a:hover {
-  background-color: #ffffff;
-  color: rgb(34, 2, 0, 1);
-  opacity: 1;
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(255, 255, 255, 0.8);
+  min-width: 100px;
+  box-shadow: 0px 8px 17px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-nav a.active {
-  background-color: #4caf50;
-  color: white;
+.dropdown-content a {
+  position: relative;
+  color: black;
+  padding: 18px 25px;
+  border-right: 10px solid transparent;
+  padding-right: 10px;
+  transition: 0.2s;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: black;
+  text-decoration: none;
+  border-right: 10px solid rgb(211, 85, 85);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-content .active-dropdown{
+  color: black;
+  text-decoration: none;
+  border-right: 10px solid rgb(211, 85, 85, 0.8);
 }
 
 .label {
@@ -136,7 +196,7 @@ nav a.active {
   height: 200px;
   bottom: 0;
   width: 100%;
-  background: rgb(34, 2, 0, 1);
+  background: rgb(45, 45, 47, 1);
   color: #ffffff;
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
@@ -336,4 +396,20 @@ nav a.active {
 .fade-leave-to {
   opacity: 0;
   transform: scale(0.5);
+}
+
+.profile-content{
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 100px;
+}
+
+.profile-img{
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.profile-card{
+  margin: 80px;
 }
