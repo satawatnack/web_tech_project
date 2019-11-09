@@ -16,7 +16,7 @@ const app = new Vue({
             new Card(
                 'content/noth/first.html',
                 'อุทยานประวัติศาสตร์กำแพงเพชร',
-                'img/south.jpg',
+                'img/อุทยานประวัติศาสตร์กำแพงเพชร1.jpg',
                 'จังหวัดกำแพงเพชร',
                 'brand new hotel in pattaya! i\'ve always thought the what ever photos they post in agoda doesnt really look like what theactual hotel is.but i was wrong, beside the hotel is'
             ),

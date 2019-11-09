@@ -8,35 +8,60 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Athiti|Krub|Prompt&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="../../script.js"></script>
+    <script src="../../script-for-content.js"></script>
 </head>
-
 <body>
     <div>
         <nav>
-            <div class="label">Web Tech</div>
-            <a href="#">About</a>
-            <a href="#">About Us</a>
-            <a href="#">Blog</a>
-            <a href="../../index.html">Home</a>
+            <div class="label" id="logo" style="color: black;">Web Tech</div>
+            <a class="nav-link" id="about" style="color: black;" href="../../aboutus.html">เกี่ยวกับเรา</a>
+            <div class="dropdown">
+                <button id="park" style="color: black;" class="dropbtn active">ภูมิภาค
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../../south.html">ภาคใต้</a>
+                    <a href="#">ภาคกลาง</a>
+                    <a href="../../east.html">ภาคตะวันออกเฉียงเหนือ</a>
+                    <a class="active-dropdown" href="../../noth.html">ภาคเหนือ</a>
+                </div>
+            </div>
+            <a class="nav-link" id="home" style="color: black;" href="../../index.html">หน้าแรก</a>
         </nav>
-        <div style="background: url(../../img/noth.jpg);background-attachment: fixed;background-position: center;background-repeat: no-repeat;"
-            class="cover-img"></div>
-        <div class="center-text" style="font-size: 40px;">อุทยานประวัติศาสตร์ศรีสัชนาลัย</div>
     </div>
 
-    <div class="center-page" style="margin-top: 20px;">
-        <h3>ที่ตั้ง</h3><br>
-        <p> อุทยานประวัติศาสตร์ศรีสัชนาลัย ตั้งอยู่ในเขตตำบลศรีสัชนาลัย ตำบลสารจิตร ตำบลหนองอ้อ และตำบลท่าชัย
-            อำเภอศรีสัชนาลัย จังหวัดสุโขทัย ตัวเมืองโบราณศรีสัชนาลัย อยู่ในเขตหมู่บ้านพระปรางค์ ตำบลศรีสัชนาลัย
-            โดยอยู่ห่างจากกรุงเทพมหานครไปทางทิศเหนือ ประมาณ 550 กิโลเมตร
-            เมืองโบราณศรีสัชนาลัยมีสภาพภูมิประเทศที่ตั้งของเมืองเป็นที่ราบเชิงเขาพระศรี และ เขาใหญ่ ทางด้านทิศตะวันตก
-            และมี
-            ลำน้ำยมอยู่ทางด้านทิศตะวันออก
-            กรมศิลปากรได้กำหนดเขตที่ดินโบราณสถานอุทยานประวัติศาสตร์ศรีสัชนาลัย ประมาณ 28,217 ไร่
-        </p><br>
+    <div class="center-detail" style="margin-top: 80px;">
+        <div class="row" style="justify-content: center;margin-top: 20px; margin-bottom: 150px;">
+            <h1 style="font-size: 3.5em;">อุทยานประวัติศาสตร์ศรีสัชนาลัย</h1>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-7 detail-label">
+                <div class="row">
+                    <div class="col">
+                        <h2><b>ที่ตั้ง</b></h2><br><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <p> อุทยานประวัติศาสตร์ศรีสัชนาลัย ตั้งอยู่ในเขตตำบลศรีสัชนาลัย ตำบลสารจิตร ตำบลหนองอ้อ และตำบลท่าชัย
+                            อำเภอศรีสัชนาลัย จังหวัดสุโขทัย ตัวเมืองโบราณศรีสัชนาลัย อยู่ในเขตหมู่บ้านพระปรางค์ ตำบลศรีสัชนาลัย
+                            โดยอยู่ห่างจากกรุงเทพมหานครไปทางทิศเหนือ ประมาณ 550 กิโลเมตร
+                            เมืองโบราณศรีสัชนาลัยมีสภาพภูมิประเทศที่ตั้งของเมืองเป็นที่ราบเชิงเขาพระศรี และ เขาใหญ่ ทางด้านทิศตะวันตก
+                            และมี
+                            ลำน้ำยมอยู่ทางด้านทิศตะวันออก
+                            กรมศิลปากรได้กำหนดเขตที่ดินโบราณสถานอุทยานประวัติศาสตร์ศรีสัชนาลัย ประมาณ 28,217 ไร่
+                        </p><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+        
         <h3>ความสำคัญทางประวัติศาสตร์</h3>
         <br>
         <p>
