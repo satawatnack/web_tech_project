@@ -262,10 +262,10 @@ const app = new Vue({
             ),
             new Card(
                 4,
-                '#',
-                'ghj',
+                'content/noth/first.html',
+                'วัดสมเด็จพระนารายณ์มหาราช',
                 'img/south.jpg',
-                'จังหวัดกำแพงแสน',
+                'จังหวัดตาก',
                 'brand new hotel in pattaya! i\'ve always thought the what ever photos they post in agoda doesnt really look like what theactual hotel is.but i was wrong, beside the hotel is'
             ),
         ]
