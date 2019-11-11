@@ -1,5 +1,6 @@
 class Card {
-    constructor(link, title, img, location, text) {
+    constructor(id, link, title, img, location, text) {
+        this.id = id;
         this.link = link;
         this.title = title;
         this.img = img;
@@ -23,6 +24,7 @@ const app = new Vue({
     el: '#app',
     data: {
         search: '',
+        select: 0,
         informationlist: [
             new Detail(
                 1,//id  ภาคเหนือ
@@ -40,8 +42,8 @@ const app = new Vue({
                  กลุ่มโบราณสถานเขตอรัญญิกของอุทยานประวัติศาสตร์กำแพงเพชร มีโบราณสถานรวมกลุ่มกันหนาแน่นในบริเวณที่ต่อเนื่อง เป็นผืนเดียวกัน ฃนอกจากนี้สภาพภูมิประเทศโดยรอบโบราณสถานยังเป็นป่าธรรมชาติที่มีการอนุรักษ์ไว้เป็นอย่างดี เพื่อคงไว้ซึ่ง บรรยากาศของโบราณสถานในเขตอรัญญิกหรืออรัญวาสีเช่นวันเวลาในอดีต\
                  อุทยานประวัติศาสตร์กำแพงเพชรได้รับการยกย่องให้เป็นมรดกโลกทางวัฒนธรรมในปี พ.ศ.2534 ร่วมกับอุทยานประวัติศาสตร์ สุโขทัย ศรีสัชนาลัย เนื่องจากหลักฐานที่ปรากฏแสดงให้เห็นถึงความงดงามอลังการของศิลปกรรมไทยในยุคแรกๆ ผลงานทาง ศิลปกรรมที่เป็นเลิศนี้ปรากฏอยู่เป็นจำนวนมากในอุทยานประวัติศาสตร์ทั้ง 3 แห่ง \
                  สมเด็จพระเทพรัตนราชสุดาฯ สยามบรมราชกุมารี เสด็จพระราชดำเนินเป็นองค์ประธานในพิธีเปิดอุทยานอย่างเป็นทางการเมื่อวันที่ 8 เมษายน พ.ศ.2534",//information
-                "1.โบราณสถานภายในกำแพงเมืองสำรวจพบแล้วมีทั้งสิ้น 20 แห่ง ที่สำคัญ คือ วัดพระแก้ว วัดพระธาตุ วัดโบราณ หรือ สระมน ศาลพระอิศวร วัดกลางนคร เป็นต้น\
-                 2โบราณสถานนอกกำแพงเมืองโดยทั่วไปเรียกกันว่า “เขตอรัญญิก” ตั้งอยู่นอกกำแพงเมืองด้านทิศเหนือ มีพื้นที่ประมาณ 1,611 ไร่ ตั้งอยู่บนเขาลูกรังขนาดย่อม สำรวจพบโบราณสถานแล้ว 37 แห่ง \
+                "โบราณสถานภายในกำแพงเมืองสำรวจพบแล้วมีทั้งสิ้น 20 แห่ง ที่สำคัญ คือ วัดพระแก้ว วัดพระธาตุ วัดโบราณ หรือ สระมน ศาลพระอิศวร วัดกลางนคร เป็นต้น\
+                 โบราณสถานนอกกำแพงเมืองโดยทั่วไปเรียกกันว่า “เขตอรัญญิก” ตั้งอยู่นอกกำแพงเมืองด้านทิศเหนือ มีพื้นที่ประมาณ 1,611 ไร่ ตั้งอยู่บนเขาลูกรังขนาดย่อม สำรวจพบโบราณสถานแล้ว 37 แห่ง \
                  ที่สำคัญคือ วัดพระนอน วัดพระสี่อิริยาบถ วัดช้างรอบ วัดอาวาสใหญ่ วัดฆ้องชัย วัดอาวาสน้อย วัดเชิงหวาย วัดดงหวาย วัดช้าง และวัดกะโลทัย เป็นต้น ส่วนโบราณสถานที่ตั้งอยู่ฟากตะวันตกของแม่น้ำปิง \
                  ทั้งภายในและภายนอกเมืองนครชุม ก็ยังมีกลุ่มโบราณสถานที่สำคัญตั้งอยู่ ภายใน เมืองนครชุมมีวัดพระบรมธาตุและวัดซุ้มกอ เป็นต้นส่วนที่อยู่นอกเมืองนครชุม ได้แก่ ป้อมทุ่งเศรษฐี วัดหนองพิกุล วัดหม่องกาเล และ วัดเจดีย์กลางทุ่ง เป็นต้น"//place
                 ),
@@ -235,6 +237,7 @@ const app = new Vue({
         ],
         cardlist: [
             new Card(
+                1,
                 'content/noth/first.html',
                 'อุทยานประวัติศาสตร์กำแพงเพชร',
                 'img/อุทยานประวัติศาสตร์กำแพงเพชร1.jpg',
@@ -242,20 +245,23 @@ const app = new Vue({
                 'brand new hotel in pattaya! i\'ve always thought the what ever photos they post in agoda doesnt really look like what theactual hotel is.but i was wrong, beside the hotel is'
             ),
             new Card(
-                'content/mid/first.html',
-                'อุทยานประวัติศาสตร์ศรีสัชนาลัย',
+                2,
+                'content/noth/first.html',
+                'เมืองโบราณเวียงกาหลง',
                 'img/south.jpg',
-                'จังหวัดกำแพงเพชร',
+                'จังหวัดเชียงราย',
                 'brand new hotel in pattaya! i\'ve always thought the what ever photos they post in agoda doesnt really look like what theactual hotel is.but i was wrong, beside the hotel is'
             ),
             new Card(
-                '#',
-                'def',
+                3,
+                'content/noth/first.html',
+                'เจดีย์คู่',
                 'img/south.jpg',
-                'จังหวัดกำแพงเพชร',
+                'จังหวัดตาก',
                 'brand new hotel in pattaya! i\'ve always thought the what ever photos they post in agoda doesnt really look like what theactual hotel is.but i was wrong, beside the hotel is'
             ),
             new Card(
+                4,
                 '#',
                 'ghj',
                 'img/south.jpg',
@@ -263,6 +269,32 @@ const app = new Vue({
                 'brand new hotel in pattaya! i\'ve always thought the what ever photos they post in agoda doesnt really look like what theactual hotel is.but i was wrong, beside the hotel is'
             ),
         ]
+    },
+    // mounted(){
+    //     if(localStorage.select)
+    //     this.select = localStorage.select;
+    // },
+    methods:{
+        eiei(id){
+            app.select = id;
+            console.log(app.select);
+            console.log(localStorage);
+        },
+        checkselect: function(){
+            console.log(localStorage.select);
+            return app.select;
+        }
+    },
+    mounted() {
+        console.log(localStorage.select);
+        if (localStorage.select) {
+          this.select = localStorage.select;
+        }
+      },
+    watch: {
+        select(newName) {
+          localStorage.select = newName;
+        }
     },
     computed: {
         filterCard() {
