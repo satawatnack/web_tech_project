@@ -56,7 +56,7 @@
                 <div v-for="card, i in filterCard" v-bind:key="card.title">
                     <div v-if="i%2 == 0" class="row sub-page-content">
                         <div class="col-sm-8 content-box">
-                            <a v-bind:href="card.link" class="link-box">
+                            <a v-bind:href="card.link" class="link-box" v-on:click="eiei(card.id)">
                                 <div class="row">
                                     <div class="col-sm-5 img-box">
                                         <img class="sub-page-img" v-bind:src="card.img" alt="">
@@ -83,7 +83,7 @@
                     <div v-else class="row sub-page-content">
                         <div class="col-sm-4"></div>
                         <div data-aos="fade-left" class="col-sm-8 content-box">
-                            <a v-bind:href="card.link" class="link-box">
+                            <a v-bind:href="card.link" class="link-box" v-on:click="eiei(card.id)">
                                 <div class="row">
                                     <div class="col-sm-5 img-box">
                                         <img class="sub-page-img" v-bind:src="card.img" alt="">
@@ -137,7 +137,7 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="vue.js"></script>
+    <script src="vue-east.js"></script>
 </body>
 
 </html>
