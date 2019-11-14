@@ -115,7 +115,6 @@ nav .nav-link {
 }
 
 .cover-video {
-  height: 850px;
 }
 
 .cover-video video {
@@ -213,7 +212,7 @@ nav .nav-link {
 
 .footer1 a:hover {
   text-decoration: underline;
-  color: rgb(148, 120, 118);
+  color: #ffffff;
   opacity: 1;
 }
 
@@ -426,4 +425,24 @@ nav .nav-link {
   font-size: 24px;
   padding: 50px;
   /* box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05); */
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.label a{
+  text-decoration: none;
+  color: white;
+}
+
+.label a:hover{
+  text-decoration: none;
+  color: white;
+  
 }
