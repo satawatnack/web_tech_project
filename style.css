@@ -446,3 +446,20 @@ nav .nav-link {
   color: white;
   
 }
+.label-for-nav {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 23px 0px 0px 40px;
+  font-size: 25px;
+}
+
+.label-for-nav a{
+  text-decoration: none;
+  color: black;
+}
+
+.label-for-nav a:hover{
+  text-decoration: none;
+  color: black;
+}
